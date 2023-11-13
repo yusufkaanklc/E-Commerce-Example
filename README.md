@@ -20,3 +20,8 @@ To start the server, run:
 ```sh
 npm start
 ```
+
+### Step 2: Launching the Development Server
+
+username : admin
+password : 12345
