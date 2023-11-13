@@ -9,9 +9,24 @@ import {
   MenuItem,
   Text,
   Button,
+  useColorMode,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import UserContext from "../contexts/UserContext";
+
+function ThemeSwitcher() {
+  const { colorMode, toggleColorMode } = useColorMode();
+
+  return (
+    <Box ml={5} pt={"3px"} fontSize={20} onClick={toggleColorMode}>
+      {colorMode === "light" ? (
+        <i className="fi fi-rr-brightness"></i> // eklenecek
+      ) : (
+        <i className="fi fi-rr-moon"></i> // eklenecek
+      )}
+    </Box>
+  );
+}
 
 function Header() {
   const navigate = useNavigate();
@@ -54,7 +69,7 @@ function Header() {
                 >
                   <Avatar maxW={"35px"} maxH={"35px"}></Avatar>
                 </MenuButton>
-                <MenuList color={"#fff"}>
+                <MenuList>
                   <MenuItem>{`User : ${userData.username}`}</MenuItem>
                   <MenuItem onClick={() => navigate("/Orders")}>
                     My Orders
@@ -65,6 +80,7 @@ function Header() {
             ) : (
               ""
             )}
+            <ThemeSwitcher></ThemeSwitcher>
           </Flex>
         </Box>
       </Flex>
