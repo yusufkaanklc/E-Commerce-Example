@@ -23,8 +23,8 @@ npm start
 
 ### Step 3: Launching the Development Server
 
-```sh username : admin ```
+```username : admin ```
 </br>
 </br>
-```sh password : 12345 ```
+```password : 12345 ```
 
