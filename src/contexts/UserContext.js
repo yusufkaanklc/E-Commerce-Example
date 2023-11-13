@@ -4,8 +4,8 @@ const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
   const userData = {
-    username: "yusuf",
-    password: "008855",
+    username: "admin",
+    password: "12345",
   };
 
   const [isLogin, setIsLogin] = useState(false);
