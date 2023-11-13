@@ -21,7 +21,7 @@ To start the server, run:
 npm start
 ```
 
-### Step 3: Launching the Development Server
+### Step 3: Log in from within the application
 
 ```username : admin ```
 </br>
