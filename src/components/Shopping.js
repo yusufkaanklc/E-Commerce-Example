@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext,useEffect } from "react";
 import {
   Flex,
   Box,
@@ -16,6 +16,7 @@ import UserContext from "../contexts/UserContext";
 function Shopping() {
   const { itemInfo, setItemInfo, itemBuy, setItemBuy } =
     useContext(ShopContext);
+
   const { isLogin } = useContext(UserContext);
 
   const handleDecreaseQuantity = (itemId) => {
@@ -43,9 +44,9 @@ function Shopping() {
     setItemInfo(updatedItemInfo);
   };
 
-  const handleBuyButton = (itemId) => {
+  const handleBuyButton = (itemId, itemQ) => {
     if (!itemBuy.some((item) => item.id === itemId)) {
-      const updatedItemInfo = itemInfo.find((item) => item.id === itemId);
+      const updatedItemInfo = itemInfo.find((item) => item.id === itemId && itemQ !== 0 );
 
       if (updatedItemInfo) {
         setItemBuy((prevItemBuy) => [...prevItemBuy, updatedItemInfo]);
@@ -121,7 +122,7 @@ function Shopping() {
                     <Button
                       w={"80px"}
                       ml={"5px"}
-                      onClick={() => handleBuyButton(item.id)}
+                      onClick={() => handleBuyButton(item.id, item.quantity)}
                     >
                       Buy
                     </Button>
