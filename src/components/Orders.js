@@ -24,7 +24,7 @@ function Orders() {
       const updatedOrdersArray = [...orders, updatedOrders];
       setOrders(updatedOrdersArray);
       const updatedTotalAmount = updatedOrdersArray.reduce(
-        (acc, order) => acc + order.price,
+        (acc, order) => acc + (order.price * order.quantity),
         0
       );
       setTotalAmount(updatedTotalAmount);
@@ -36,7 +36,7 @@ function Orders() {
     const updatedOrders = orders.filter((item) => item.id !== itemId);
     setOrders([...updatedOrders]);
     const updatedTotalAmount = updatedOrders.reduce(
-      (acc, order) => acc + order.price,
+      (acc, order) => acc + (order.price * order.quantity),
       0
     );
     setTotalAmount(updatedTotalAmount);
