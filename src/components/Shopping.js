@@ -81,7 +81,7 @@ function Shopping() {
                   p={"10px"}
                   alignItems={"center"}
                   justifyContent={"space-between"}
-                  bg={"transparent}
+                  bg={"transparent"}
                   borderRadius={"md"}
                   border = {"1px solid black"}
                 >
